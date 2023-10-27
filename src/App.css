@@ -1,12 +1,120 @@
 /* App.css */
 
+/* Estilo del contenedor de las tarjetas */
 .card-container {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr); /* Dos columnas de igual ancho */
+	grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual ancho */
 	gap: 20px; /* Espacio entre las tarjetas */
 	justify-content: center; /* Centrar las tarjetas horizontalmente */
-}
-.card img {
-	width: 200px;
-	height: 200px;
-}
+	padding: 20px; /* Espaciado en el contenedor */
+  }
+  
+  /* Estilo de las tarjetas individuales */
+  .card {
+	background: linear-gradient(135deg, #f06, #f90);
+	border: none;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+	text-align: center;
+	padding: 20px;
+	transform: scale(1);
+	transition: transform 0.3s, box-shadow 0.3s;
+	cursor: pointer;
+  }
+  
+  .card:hover {
+	transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	animation: changeColor 5s infinite; /* Aumentar la duración de la animación */
+  }
+  
+  @keyframes changeColor {
+	0% {
+	  background: linear-gradient(135deg, #f06, #f90);
+	}
+	25% {
+	  background: linear-gradient(135deg, #f90, #09f);
+	}
+	50% {
+	  background: linear-gradient(135deg, #09f, #0f9);
+	}
+	75% {
+	  background: linear-gradient(135deg, #0f9, #9f0);
+	}
+	100% {
+	  background: linear-gradient(135deg, #9f0, #f06);
+	}
+  }
+  
+  .card img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+  }
+  
+  /* Estilo del título */
+  .card h1 {
+	font-size: 24px;
+	margin: 16px 0;
+	color: #fff;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Estilo de los botones */
+  .card button {
+	background: #007BFF;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	margin: 10px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background 0.3s;
+	font-size: 18px;
+	position: relative; /* Para posicionar el elemento ::before */
+  }
+  
+  .card button:hover {
+	background: #0056b3;
+  }
+  
+  .card button.like-clicked {
+	animation: likeClick 0.5s;
+  }
+  
+  @keyframes likeClick {
+	0% {
+	  background: #ff69b4; /* Color rosa */
+	}
+	100% {
+	  background: #007BFF; /* Volver al color original al final de la animación */
+	}
+  }
+  
+  /* Estilo del contador de likes */
+  .card .likes {
+	font-size: 20px;
+	margin: 16px 0;
+	color: #fff;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Estilo del botón de eliminación */
+  .card .delete-button {
+	background: #FF3D3D;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	margin: 10px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background 0.3s;
+	font-size: 18px;
+  }
+  
+  .card .delete-button:hover {
+	background: #D91A1A;
+  }
+  
+  
